@@ -4,9 +4,9 @@
   </head>
 
   <body>
-      <h1> Witajcie Piekni Ludzie !!!!!!!!!!!!!!!! </h1>
+      <h1> MyToDoList ! </h1>
       <ul class="list-group">
-        <% @items.each do |item| %>
+       <% @items.each do |item| %>
          <% if item["completed"] %>
           <p><s> <%= item["name"] %> </s></p>
          <% else %>
@@ -17,11 +17,11 @@
             </form>
          <% end %>
             <form method="POST" action="/delete">
-              <input type="hidden" name="delete_id" value=" <%= item['id'] %>" >
+              <input type="hidden" name="delete_id" value="<%= item['id'] %>" >
               <button name="delete_data"> Delete</button>
             </form>
-        <% end %>
-       </li>
+       <% end %>
+     
       </ul>
 
       <form method="POST" action="/item">
